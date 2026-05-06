@@ -40,3 +40,36 @@ botonModo.addEventListener('click', function () {
         icono.classList.replace('fa-sun', 'fa-moon');
     }
 });
+
+const proyectos = [
+    {
+        titulo: "Proyecto 1",
+        descripcion: "Aplicación web de gestión de tareas.",
+        icono: "fa-code"
+    },
+    {
+        titulo: "Proyecto 2",
+        descripcion: "Diseño de interfaz para app móvil.",
+        icono: "fa-palette"
+    },
+    {
+        titulo: "Proyecto 3",
+        descripcion: "Página web responsive para negocio.",
+        icono: "fa-mobile-alt"
+    }
+];
+
+const contenedorTarjetas = document.querySelector('.tarjetas');
+contenedorTarjetas.innerHTML = '';
+
+proyectos.forEach(function (proyecto) {
+    const tarjeta = document.createElement('div');
+    tarjeta.classList.add('tarjeta', 'animar');
+    tarjeta.innerHTML = `
+        <i class="fas ${proyecto.icono} fa-2x" style="color: #3498db;"></i>
+        <h3>${proyecto.titulo}</h3>
+        <p>${proyecto.descripcion}</p>
+    `;
+    contenedorTarjetas.appendChild(tarjeta);
+    observer.observe(tarjeta);
+});
