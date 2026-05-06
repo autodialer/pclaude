@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Mi Página Web</h1>
+        <nav>
+            <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#sobre-mi"><i class="fas fa-user"></i> Sobre mí</a>
+            <a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a>
+            <a href="#galeria"><i class="fas fa-images"></i> Galería</a>
+        </nav>
+        <button id="modo-oscuro" title="Cambiar modo">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <div class="banner">
+                <h2>Hola, soy tu nombre</h2>
+                <p>Diseñador web / Desarrollador / Lo que seas</p>
+                <a href="#contacto" class="boton">Contáctame</a>
+            </div>
+            <h2>Bienvenido</h2>
+            <p>Esta es mi página web. Aquí voy a poner mi contenido.</p>
+
+            <div class="tarjetas">
+                <div class="tarjeta animar">
+                    <i class="fas fa-code fa-2x" style="color: #3498db;"></i>
+                    <h3>Proyecto 1</h3>
+                    <p>Descripción del primer proyecto.</p>
+                </div>
+                <div class="tarjeta animar">
+                    <i class="fas fa-palette fa-2x" style="color: #3498db;"></i>
+                    <h3>Proyecto 2</h3>
+                    <p>Descripción del segundo proyecto.</p>
+                </div>
+                <div class="tarjeta animar">
+                    <i class="fas fa-mobile-alt fa-2x" style="color: #3498db;"></i>
+                    <h3>Proyecto 3</h3>
+                    <p>Descripción del tercer proyecto.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="animar">
+            <h2>Sobre mí</h2>
+            <p>Soy una persona aprendiendo a crear páginas web. Me gusta la tecnología y el diseño.</p>
+        </section>
+        <section id="galeria" class="animar">
+            <h2>Galería</h2>
+            <p>Algunos de mis trabajos y proyectos.</p>
+
+            <div class="galeria">
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/400/300?random=1" alt="Proyecto 1">
+                    <div class="galeria-overlay">
+                        <p>Proyecto 1</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/400/300?random=2" alt="Proyecto 2">
+                    <div class="galeria-overlay">
+                        <p>Proyecto 2</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Proyecto 3">
+                    <div class="galeria-overlay">
+                        <p>Proyecto 3</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/400/300?random=4" alt="Proyecto 4">
+                    <div class="galeria-overlay">
+                        <p>Proyecto 4</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/400/300?random=5" alt="Proyecto 5">
+                    <div class="galeria-overlay">
+                        <p>Proyecto 5</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/400/300?random=6" alt="Proyecto 6">
+                    <div class="galeria-overlay">
+                        <p>Proyecto 6</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contacto" class="animar">
+            <h2>Contacto</h2>
+            <p>Llena el formulario y me pongo en contacto contigo.</p>
+
+            <form class="formulario">
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre">
+                </div>
+                <div class="campo">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" placeholder="tucorreo@email.com">
+                </div>
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Mi Página Web</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
