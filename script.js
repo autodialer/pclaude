@@ -62,14 +62,23 @@ const proyectos = [
 const contenedorTarjetas = document.querySelector('.tarjetas');
 contenedorTarjetas.innerHTML = '';
 
-proyectos.forEach(function (proyecto) {
-    const tarjeta = document.createElement('div');
-    tarjeta.classList.add('tarjeta', 'animar');
-    tarjeta.innerHTML = `
-        <i class="fas ${proyecto.icono} fa-2x" style="color: #3498db;"></i>
-        <h3>${proyecto.titulo}</h3>
-        <p>${proyecto.descripcion}</p>
-    `;
-    contenedorTarjetas.appendChild(tarjeta);
-    observer.observe(tarjeta);
-});
+fetch('/api/proyectos')
+    .then(function (respuesta) {
+        return respuesta.json();
+    })
+    .then(function (proyectos) {
+        const contenedorTarjetas = document.querySelector('.tarjetas');
+        contenedorTarjetas.innerHTML = '';
+
+        proyectos.forEach(function (proyecto) {
+            const tarjeta = document.createElement('div');
+            tarjeta.classList.add('tarjeta', 'animar');
+            tarjeta.innerHTML = `
+                <i class="fas ${proyecto.icono} fa-2x" style="color: #3498db;"></i>
+                <h3>${proyecto.titulo}</h3>
+                <p>${proyecto.descripcion}</p>
+            `;
+            contenedorTarjetas.appendChild(tarjeta);
+            observer.observe(tarjeta);
+        });
+    });

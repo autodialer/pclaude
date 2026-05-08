@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro a React</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        function Tarjeta({ titulo, descripcion, icono }) {
+            const [likes, setLikes] = React.useState(5);
+
+            return (
+                <div style={{
+                    background: 'white',
+                    padding: '20px',
+                    borderRadius: '8px',
+                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+                    marginBottom: '15px'
+                }}>
+                    <h3 style={{ color: '#2c3e50' }}>{icono} {titulo}</h3>
+                    <p>{descripcion}</p>
+                    <button
+                        onClick={() => setLikes(likes + 1)}
+                        style={{
+                            background: '#3498db',
+                            color: 'white',
+                            border: 'none',
+                            padding: '8px 15px',
+                            borderRadius: '5px',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        ❤️ Me gusta ({likes})
+                    </button>
+                </div>
+            );
+        }
+
+        function App() {
+            const proyectos = [
+                { id: 1, titulo: "Proyecto 1", descripcion: "Aplicación web de tareas.", icono: "💻" },
+                { id: 2, titulo: "Proyecto 2", descripcion: "Diseño de app móvil.", icono: "🎨" },
+                { id: 3, titulo: "Proyecto 3", descripcion: "Página web responsive.", icono: "📱" }
+            ];
+
+            return (
+                <div style={{ maxWidth: '600px', margin: '40px auto', fontFamily: 'Arial' }}>
+                    <h1 style={{ color: '#2c3e50' }}>Mis Proyectos</h1>
+                    {proyectos.map(proyecto => (
+                        <Tarjeta
+                            key={proyecto.id}
+                            titulo={proyecto.titulo}
+                            descripcion={proyecto.descripcion}
+                            icono={proyecto.icono}
+                        />
+                    ))}
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('app'));
+        root.render(<App />);
+    </script>
+
+</body>
+
+</html>
